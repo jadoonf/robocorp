@@ -3,10 +3,10 @@ name: Action Server Frontend tests
 on:
   push:
     branches:
-      - "lstn"
+      - "*"
   pull_request:
     branches:
-      - "master"
+      - "*"
     paths:
       - "action_server/frontend/**"
       - ".github/workflows/action_server_frontend_tests.yml"
@@ -31,6 +31,7 @@ jobs:
         with:
           jwt: ${{ secrets.LS }}
           ci: only 
+          argus_version: v0.5
           
       - name: Run Tests
         run: |
